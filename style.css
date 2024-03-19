@@ -1,0 +1,216 @@
+/**************************/
+/* A (more) Modern CSS Reset*/
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* by Andy Bell */
+/**************************/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/**************************/
+
+/* Custom properties (variables) for colors, font-weights */
+:root {
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+
+/* Local fonts */
+@font-face {
+  font-family: "Inter";
+  src: url(./assets/fonts/Inter-VariableFont_slnt\wght.ttf) format("truetype");
+}
+
+/* General component styling */
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem; /* 14px */
+  color: var(--white);
+  background-color: var(--off-black);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.card {
+  max-width: 20rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background-color: var(--dark-grey);
+}
+
+/* Image container */
+.image-container {
+  margin-bottom: 2rem;
+}
+
+.image--img {
+  margin: auto;
+  width: 40%;
+  border-radius: 100%;
+}
+
+/* Text container */
+.text--heading {
+  font-size: 1.8em;
+  font-weight: var(--fw-bold);
+}
+
+.text--subheading {
+  font-weight: var(--fw-semi-bold);
+  color: var(--green);
+  margin-bottom: 1.5rem;
+}
+
+.text--description {
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Text list, cta and active states*/
+.text-list {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text--list-cta {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--grey);
+  border-radius: 8px;
+  font-weight: var(--fw-semi-bold);
+  padding: 1rem 0.5rem;
+}
+
+.text--list-cta:link,
+.text--list-cta:visited {
+  color: currentColor;
+}
+
+.text--list-cta:focus {
+  outline: none;
+  /* border: 4px dashed var(--green); */
+  box-shadow: inset 0 0 0 4px var(--green);
+}
+
+.text--list-cta:hover {
+  background-color: var(--green);
+  color: var(--off-black);
+}
+
+.text--list-cta:active {
+  background-color: var(--grey);
+  color: var(--green);
+}
+
+/* Footer */
+.attribution {
+  font-size: 0.6875rem; /* 11px */
+}
+
+.attribution a {
+  /* color: hsl(228, 45%, 44%); */
+  color: var(--green);
+}
